@@ -4,40 +4,102 @@ import {
   StyleSheet,
   Text,
   View,
+  Image,
+  asset,
+  Environment,
 } from 'react-360';
+import InfoButton from 'InfoButton.react';
+import ScenePage from 'ScenePage.react';
 
-export default class Hello360 extends React.Component {
+// referencing an asset from 'static_assets' directory
+const INFO_BUTTON_IMAGE = asset('info_icon.png');
+const SCENE_COUNT = 3;
+
+// The root react component of the app
+export default class BasicAppTemplate extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      index: 0,
+    };
+  }
+
+  _onClick = (index) => {
+    this.setState({index: index});
+  };
+
   render() {
+    const sceneButtons = [];
+    for (const i = 0; i < SCENE_COUNT; i++) {
+      sceneButtons.push(
+        <InfoButton
+          key={i}
+          style={styles.button}
+          source={INFO_BUTTON_IMAGE}
+          text={`Scene ${i}`}
+          onClick={() => { this._onClick(i); }}
+        />)
+    }
     return (
       <View style={styles.panel}>
-        <View style={styles.greetingBox}>
-          <Text style={styles.greeting}>
-            JOES REACT VR PROJECT
-          </Text>
+        <View>
+        <Text style={styles.hellobox}>
+        Click One of The Scenes Below
+        </Text>
+        </View>
+        <View style={styles.section}>  
+          {sceneButtons}
+        </View>
+        <View style={styles.scenePage}>
+          <ScenePage
+            index={this.state.index} />
         </View>
       </View>
     );
   }
 };
 
+// defining StyleSheet
 const styles = StyleSheet.create({
   panel: {
-    // Fill the entire surface
     width: 1000,
     height: 600,
     backgroundColor: 'rgba(255, 255, 255, 0.4)',
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  greetingBox: {
     padding: 20,
-    backgroundColor: '#000000',
+  },
+  section: {
+    padding: 5,
+    width: 750,
+    backgroundColor: 'blue',
     borderColor: '#639dda',
-    borderWidth: 5,
+    borderWidth: 2,
+    marginBottom: 50,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-  greeting: {
+  button: {
+    marginLeft: 5,
+    marginRight: 5,
+  },
+  scenePage: {
+    padding: 5,
+    width: 600,
+    height: 300,
+    backgroundColor: 'grey',
+    borderRadius: 5,
+  },
+  hellobox: {
     fontSize: 60,
-  },
+    color: 'red',
+    marginBottom: 25,
+    alignItems: 'center',
+    justifyContent: 'center',
+  }
 });
 
-AppRegistry.registerComponent('Hello360', () => Hello360);
+// register the root component
+// this will be used from client.js by r360.createRoot('BasicAppTemplate' ...)
+AppRegistry.registerComponent('BasicAppTemplate', () => BasicAppTemplate);
