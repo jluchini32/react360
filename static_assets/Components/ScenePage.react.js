@@ -22,23 +22,40 @@ const DATA_BASE = [
     type: 'photo',
     source: asset('homepage.jpg'),
     list: [
-      'Bicycle',
-      'Skateboard',
-      'Scooter',
+      'Band 1',
+      'Band 2',
+      'Band 3',
     ]
   },
-  {
-    type: 'photo',
-    source: asset('ocean.jpg'),
-    audio: asset('cafe.wav'),
-    list: [
-      'Towel',
-      'Umbrella',
-    ]
-  },
+  // {
+  //   type: 'photo',
+  //   source: asset('homepage.jpg'),
+  //   audio: asset(''),
+  //   list: [
+  //     'Band 1',
+  //     'Band 1',
+  //   ]
+  // },
   {
     type: 'video',
-    source: {url: asset('highlysuspect.mp4').uri},
+    source: {url: asset('stonesour.mp4').uri},
+    audio: asset ('stonesour.mp3')
+    /* If you want to have muliple format of source
+    and let browser choose the supported one
+    try the following:
+    source: [
+      // Here we provide two format to the source so
+      // if first format doesn't work, the second one
+      // will be used.
+      {url: asset('video360.mp4').uri},
+      {url: asset('video360.webm').uri},
+    ],
+    */
+  },
+
+  {
+    type: 'video',
+    source: {url: asset('highlysus.mp4').uri},
     audio: asset ('highlysuspect.mp3')
     /* If you want to have muliple format of source
     and let browser choose the supported one

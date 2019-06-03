@@ -36,20 +36,36 @@ export default class BasicAppTemplate extends React.Component {
           key={i}
           style={styles.button}
           source={INFO_BUTTON_IMAGE}
-          text={`Scene ${i}`}
+          text={`Genre ${i}`}
           onClick={() => { this._onClick(i); }}
         />)
     }
+
+    
     return (
+      // Panel Box
       <View style={styles.panel}>
+
+      {/* Greeting box */}
         <View>
         <Text style={styles.hellobox}>
-        Click One of The Scenes Below
+        Click One of The Genres Below
         </Text>
         </View>
+
+      {/* Scene Buttons */}
         <View style={styles.section}>  
           {sceneButtons}
         </View>
+
+      {/* Scene Buttons */}
+        <View style={styles.section}>  
+          {sceneButtons}
+        </View> 
+
+        
+
+        
         <View style={styles.scenePage}>
           <ScenePage
             index={this.state.index} />
@@ -75,7 +91,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'blue',
     borderColor: '#639dda',
     borderWidth: 2,
-    marginBottom: 50,
+    marginBottom: 25,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
