@@ -23,26 +23,26 @@ const DATA_BASE = [
     type: 'photo',
     source: asset('homepage.jpg'),
     list: [
-      'Band 1',
-      'Band 1',
+      'Band 0',
+      'Band 0',
     ]
   },
-  // {
-  //   type: 'photo',
-  //   source: asset('homepage.jpg'),
-  //   audio: asset(''),
-  //   list: [
-  //     'Band 2',
-  //     'Band 2',
-  //   ]
-  // },
   {
     type: 'photo',
     source: asset('homepage.jpg'),
     audio: asset(''),
     list: [
-      'Band 3',
-      'Band 3',
+      'Band 1',
+      'Band 1',
+    ]
+  },
+  {
+    type: 'photo',
+    source: asset('homepage.jpg'),
+    audio: asset(''),
+    list: [
+      'Band 2',
+      'Band 2',
     ]
   },
 // ];
@@ -65,15 +65,15 @@ const DATA_BASE = [
   //   */
   // },
 
-  {
-    type: 'photo',
-    source: asset('homepage.jpg'),
-    audio: asset(''),
-    list: [
-      'Band 1',
-      'Band 2',
-    ]
-  },
+  // {
+  //   type: 'photo',
+  //   source: asset('homepage.jpg'),
+  //   audio: asset(''),
+  //   list: [
+  //     'Band 1',
+  //     'Band 2',
+  //   ]
+  // },
 ];
   // {
   //   type: 'video',
