@@ -26,6 +26,12 @@ function init(bundle, parent, options = {}) {
     r360.getDefaultSurface()
   );
 
+  //RENDERING TO ANOTHER SURFACE
+  // r360.renderToSurface(
+  //   r360.createRoot('ScenePage', { /* initial props */ }),
+  //   r360.getDefaultSurface()
+  // );
+
   // Load the initial environment
   r360.compositor.setBackground(r360.getAssetURL('homepage.jpg'));
 }
